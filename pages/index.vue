@@ -362,14 +362,6 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .container {
-  }
-  .overlay {
-  }
-  .guia-nav {
-    button {
-    }
-  }
   .cd-logo {
     width: 50%;
   }
@@ -386,8 +378,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-  }
-  .main-content-desc-title {
   }
 
   .main-content-desc-inner {

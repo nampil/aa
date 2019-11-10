@@ -3,7 +3,10 @@
     <div class="wrapper">
       <h1>Mi Avance</h1>
       <nav>
-        <div class="prev">
+        <div
+          v-if="prev"
+          class="prev"
+        >
           <button
             aria-label="anterior"
             @click="moveBack"
@@ -15,7 +18,10 @@
           </button>
         </div>
         <div class="pages">{{currentPage}}/{{totalPages}}</div>
-        <div class="next">
+        <div
+          v-if="next"
+          class="next"
+        >
           <button
             aria-label="siguiente"
             @click="moveForward"
@@ -38,10 +44,18 @@ export default {
   props: ['prev', 'currentPage', 'totalPages', 'next'],
   methods: {
     moveForward() {
-      this.$router.push(`/${this.next}`)
+      if (this.next === '/') {
+        this.$router.push(this.next)
+      } else {
+        this.$router.push(`/${this.next}`)
+      }
     },
     moveBack() {
-      this.$router.push(`/${this.prev}`)
+      if (this.prev === '/') {
+        this.$router.push('/')
+      } else {
+        this.$router.push(`/${this.prev}`)
+      }
     }
   }
 }

@@ -81,7 +81,7 @@
       next="3"
       current-page="1"
       total-pages="3"
-      prev
+      prev="/"
     />
   </main>
 </template>
